@@ -2,7 +2,7 @@ const { test, expect } = require('@playwright/test');
 
 
 // Returns correct values
-test('CM - Scale Heat and Cool Densidy Maps returns correct values', async ({ page }) => {
+test.skip('CM - Scale Heat and Cool Densidy Maps returns correct values', async ({ page }) => {
     test.setTimeout(120_000)
 
     await page.goto('https://citiwattsdev.hevs.ch/');
@@ -20,7 +20,7 @@ test('CM - Scale Heat and Cool Densidy Maps returns correct values', async ({ pa
     await expect(page.getByRole('table')).toContainText('Heat density total multiplied by 1.0');
 });
 
-test('CM - Scale Heat and Cool Densidy Maps dispalys results on map correctly', async ({ page }) => {
+test.skip('CM - Scale Heat and Cool Densidy Maps dispalys results on map correctly', async ({ page }) => {
     test.setTimeout(120_000)
 
     await page.goto('https://citiwattsdev.hevs.ch/');

@@ -6,9 +6,7 @@ test('Heat Density Total exists', async ({ page }) => {
 
   await page.getByRole('button', { name: 'GO TO APP' }).click();
   await page.getByText('Decline statistics cookies', { exact: true }).click();
-  await page.getByText('Layers', { exact: true }).click();
+  await page.getByRole('tab', { name: 'Layers' }).click();
 
-  await expect(page.getByRole('button', { name: 'HEAT DENSITY TOTAL' })).toBeVisible();
+  await expect(page.getByLabel('Heat density total', { exact: true })).toBeVisible();
 });
-
-

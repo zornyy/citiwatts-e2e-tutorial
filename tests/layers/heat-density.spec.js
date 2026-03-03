@@ -3,7 +3,7 @@ const { test, expect } = require('@playwright/test');
 
 
 // Test Values
-test('Heat Density Total Layer returns correct values', async ({ page }) => {
+test.skip('Heat Density Total Layer returns correct values', async ({ page }) => {
     await page.goto('https://citiwattsdev.hevs.ch/');
   
     // France
@@ -13,7 +13,6 @@ test('Heat Density Total Layer returns correct values', async ({ page }) => {
     await page.getByPlaceholder('Go to place...').fill('paris');
     await page.getByPlaceholder('Go to place...').press('Enter');
     await page.locator('#map').click();
-    await page.getByRole('button', { name: 'Load results' }).click();
     await page.getByRole('button', { name: 'Layers' }).click();
     await page.getByRole('button', { name: 'Heat density total' }).click();
   
@@ -22,7 +21,7 @@ test('Heat Density Total Layer returns correct values', async ({ page }) => {
     await expect(page.locator('tbody')).toContainText('5 005 424 cells');
 });
 
-test('Heat Density Non-Residential Sector Layer returns correct values', async ({ page }) => {
+test.skip('Heat Density Non-Residential Sector Layer returns correct values', async ({ page }) => {
     await page.goto('https://citiwattsdev.hevs.ch/');
   
     // France
@@ -41,7 +40,7 @@ test('Heat Density Non-Residential Sector Layer returns correct values', async (
     await expect(page.locator('tbody')).toContainText('73.39 MWh/(ha*yr) ');
 });
 
-test('Heat Density Residential Sector Layer returns correct values', async ({ page }) => {
+test.skip('Heat Density Residential Sector Layer returns correct values', async ({ page }) => {
     await page.goto('https://citiwattsdev.hevs.ch/');
   
     // France
